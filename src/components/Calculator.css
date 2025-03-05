@@ -1,0 +1,316 @@
+:root {
+    /* Light Theme */
+    --light-bg: #ffffff;
+    --light-primary: #f0f0f0;
+    --light-text: #333;
+    --light-accent: #4a4a4a;
+    --light-button: #e0e0e0;
+    --light-button-hover: #d0d0d0;
+
+    /* Dark Theme */
+    --dark-bg: #121212;
+    --dark-primary: #1e1e1e;
+    --dark-text: #ffffff;
+    --dark-accent: #cccccc;
+    --dark-button: #2a2a2a;
+    --dark-button-hover: #3a3a3a;
+
+    /* Blue Theme */
+    --blue-bg: #f0f4f8;
+    --blue-primary: #e6f2ff;
+    --blue-text: #00366d;
+    --blue-accent: #0066cc;
+    --blue-button: #b3d9ff;
+    --blue-button-hover: #8bc6ff;
+
+    /* Green Theme */
+    --green-bg: #f0f5f0;
+    --green-primary: #e6f3e6;
+    --green-text: #005000;
+    --green-accent: #008000;
+    --green-button: #b3e0b3;
+    --green-button-hover: #8cd88c;
+
+    /* Purple Theme */
+    --purple-bg: #f5f0f5;
+    --purple-primary: #f3e6f3;
+    --purple-text: #4b0082;
+    --purple-accent: #6a0dad;
+    --purple-button: #e0b3e0;
+    --purple-button-hover: #d08cd0;
+
+    /* Orange Theme */
+    --orange-bg: #fff5e6;
+    --orange-primary: #fff3e6;
+    --orange-text: #803000;
+    --orange-accent: #ff6600;
+    --orange-button: #ffe0b3;
+    --orange-button-hover: #ffd280;
+
+    /* Pink Theme */
+    --pink-bg: #fff0f5;
+    --pink-primary: #fef0f3;
+    --pink-text: #8b008b;
+    --pink-accent: #ff1493;
+    --pink-button: #ffc0cb;
+    --pink-button-hover: #ffa6c9;
+}
+
+/* Theme-specific styles */
+.light {
+    --bg: var(--light-bg);
+    --primary: var(--light-primary);
+    --text: var(--light-text);
+    --accent: var(--light-accent);
+    --button: var(--light-button);
+    --button-hover: var(--light-button-hover);
+}
+
+.dark {
+    --bg: var(--dark-bg);
+    --primary: var(--dark-primary);
+    --text: var(--dark-text);
+    --accent: var(--dark-accent);
+    --button: var(--dark-button);
+    --button-hover: var(--dark-button-hover);
+}
+
+.blue {
+    --bg: var(--blue-bg);
+    --primary: var(--blue-primary);
+    --text: var(--blue-text);
+    --accent: var(--blue-accent);
+    --button: var(--blue-button);
+    --button-hover: var(--blue-button-hover);
+}
+
+.green {
+    --bg: var(--green-bg);
+    --primary: var(--green-primary);
+    --text: var(--green-text);
+    --accent: var(--green-accent);
+    --button: var(--green-button);
+    --button-hover: var(--green-button-hover);
+}
+
+.purple {
+    --bg: var(--purple-bg);
+    --primary: var(--purple-primary);
+    --text: var(--purple-text);
+    --accent: var(--purple-accent);
+    --button: var(--purple-button);
+    --button-hover: var(--purple-button-hover);
+}
+
+.orange {
+    --bg: var(--orange-bg);
+    --primary: var(--orange-primary);
+    --text: var(--orange-text);
+    --accent: var(--orange-accent);
+    --button: var(--orange-button);
+    --button-hover: var(--orange-button-hover);
+}
+
+.pink {
+    --bg: var(--pink-bg);
+    --primary: var(--pink-primary);
+    --text: var(--pink-text);
+    --accent: var(--pink-accent);
+    --button: var(--pink-button);
+    --button-hover: var(--pink-button-hover);
+}
+
+/* Global Styles */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--bg);
+    transition: background-color 0.3s ease;
+}
+
+.calculator-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 500px;
+    background: transparent;
+    gap: 20px;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.profile-pic {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 3px solid var(--accent);
+}
+
+.username {
+    color: var(--text);
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* Calculator Styles */
+.calculator {
+    background-color: var(--primary);
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.mode-switch {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.mode-switch button {
+    flex: 1;
+    padding: 10px;
+    margin: 0 5px;
+    background-color: var(--button);
+    border: none;
+    color: var(--text);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+}
+
+.mode-switch button.active {
+    background-color: var(--accent);
+    color: white;
+}
+
+.display {
+    background-color: var(--button);
+    color: var(--text);
+    text-align: right;
+    padding: 15px;
+    font-size: 24px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.buttons button {
+    background-color: var(--button);
+    color: var(--text);
+    border: none;
+    padding: 15px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.2s ease;
+}
+
+.buttons button:hover {
+    background-color: var(--button-hover);
+}
+
+.clear {
+    grid-column: span 2;
+    background-color: #ff6b6b !important;
+    color: white !important;
+}
+
+/* Theme Container Styles */
+.theme-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.theme-text {
+    color: var(--text);
+    font-size: 14px;
+}
+
+.theme-button {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.theme-dropdown {
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background: var(--primary, white);
+    padding: 8px;
+    border-radius: 10px;
+    display: flex;
+    gap: 6px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    z-index: 10;
+}
+
+.color-dot {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+    border: 2px solid transparent;
+}
+
+/* Explicit color definitions for dots */
+.color-dot.white {
+    background-color: #121212;
+    border: 1px solid #e0e0e0;
+}
+
+.color-dot.light {
+    background-color: #f0f0f0;
+}
+
+.color-dot.dark {
+    background-color: #121212;
+}
+
+.color-dot.blue {
+    background-color: #007bff;
+}
+
+.color-dot.green {
+    background-color: #28a745;
+}
+
+.color-dot.purple {
+    background-color: #6f42c1;
+}
+
+.color-dot.orange {
+    background-color: #fd7e14;
+}
+
+.color-dot.pink {
+    background-color: #e83e8c;
+}
+
+.color-dot:hover {
+    transform: scale(1.2);
+    opacity: 0.8;
+}

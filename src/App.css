@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+    /* Color definitions */
+    --white-bg: #ffffff;
+    --dark-bg: #121212;
+    --blue-bg: #007bff;
+    --green-bg: #28a745;
+    --purple-bg: #6f42c1;
+    --orange-bg: #fd7e14;
+    --pink-bg: #e83e8c;
+
+    /* Text colors for better contrast */
+    --text-light: #000000;
+    --text-dark: #ffffff;
+}
+
+.App {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    transition: background 0.3s ease-in-out;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+}
+
+.profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 8px;
+    border: 2px solid var(--accent, #555);
+}
+
+.username {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+/* Theme Toggle Styles */
+.theme-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.theme-text {
+    font-size: 12px;
+    margin-bottom: 5px;
+    color: var(--text, black);
+}
+
+.theme-button {
+    background: var(--accent, #555);
+    color: var(--bg, white);
+    font-size: 12px;
+    border: none;
+    padding: 8px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.theme-button:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+
+/* Theme Dropdown */
+.theme-dropdown {
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background: var(--primary, white);
+    padding: 8px;
+    border-radius: 10px;
+    display: flex;
+    gap: 6px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* Color Dots */
+.color-dot {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+    border: 2px solid transparent;
+}
+
+.color-dot:hover {
+    transform: scale(1.2);
+    border-color: var(--text, black);
+}
+
+/* Theme Color Definitions */
+.white {
+    --bg: var(--white-bg);
+    --text: var(--text-light);
+    --accent: #555;
+    --primary: #f4f4f4;
+}
+
+.dark {
+    --bg: var(--dark-bg);
+    --text: var(--text-dark);
+    --accent: #777;
+    --primary: #1e1e1e;
+}
+
+.blue {
+    --bg: var(--blue-bg);
+    --text: var(--text-dark);
+    --accent: #0056b3;
+    --primary: #5c9eff;
+}
+
+.green {
+    --bg: var(--green-bg);
+    --text: var(--text-dark);
+    --accent: #1e7e34;
+    --primary: #50c878;
+}
+
+.purple {
+    --bg: var(--purple-bg);
+    --text: var(--text-dark);
+    --accent: #4a148c;
+    --primary: #9c27b0;
+}
+
+.orange {
+    --bg: var(--orange-bg);
+    --text: var(--text-dark);
+    --accent: #bd5700;
+    --primary: #ff9800;
+}
+
+.pink {
+    --bg: var(--pink-bg);
+    --text: var(--text-dark);
+    --accent: #9c2759;
+    --primary: #ff69b4;
+}
+
+/* Additional theme-specific adjustments */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    transition: all 0.3s ease-in-out;
+}
